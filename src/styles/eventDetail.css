@@ -1,0 +1,70 @@
+.event-detail-page {
+  padding: 8vh 5vw;
+}
+
+.event-detail-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.event-info {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.event-info p {
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.event-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #d5651b;
+  font-weight: bold;
+  font-size: 1rem;
+  background: white;
+  border: 1px solid #d5651b;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #d5651b;
+  color: white;
+}
+
+.reserve-button {
+  background-color: #d5651b;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 2rem;
+}
+
+.reserve-button:hover {
+  background-color: #b84f10;
+}

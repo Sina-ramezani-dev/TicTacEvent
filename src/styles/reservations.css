@@ -1,0 +1,56 @@
+.reservations-page {
+  background-image: url("../assets/backgrounds/reservations-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 8vh 4vw 5vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.reservations-page h2 {
+  font-size: 2rem;
+  margin-bottom: 3vh;
+}
+
+.reservations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  align-items: center;
+}
+
+.reservation-item {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.reservation-img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: #d5651b;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  transition: background 0.3s;
+}
+
+.delete-btn:hover {
+  background: #a7440d;
+}

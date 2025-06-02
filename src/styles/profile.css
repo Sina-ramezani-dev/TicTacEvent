@@ -1,0 +1,93 @@
+.profile-container {
+  padding: 8vh 5vw 5vh;
+  box-sizing: border-box;
+}
+
+.profile-container h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4vw;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-left {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  min-width: 250px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.profile-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile-left p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 300px;
+  max-width: 400px;
+  flex: 1;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-left: 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.edit-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #888;
+}
+
+.save-btn {
+  background-color: #d5651b;
+  color: white;
+  border: none;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #b84f10;
+}

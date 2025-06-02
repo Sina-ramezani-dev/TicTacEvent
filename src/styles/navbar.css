@@ -1,0 +1,187 @@
+/* Navbar */
+.navbar {
+  background-color: white; /* ✅ blanc */
+  color: black;
+  border-bottom: 1px solid #ddd;
+  padding: 1.5vh 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+  
+  /* Gestion des éléments */
+  .navbar-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Logo texte (affiché sur PC) */
+  .logo-text {
+    color: black;
+    font-size: 2.5vw;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 2vw;
+  }
+  
+  /* Logo image (affiché sur mobile) */
+  .logo-img {
+    display: none;
+  }
+  
+  .logo-img img {
+    width: 8vw;
+    max-width: 50px;
+  }
+  
+  /* Centrage de la barre de recherche */
+  .navbar-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 2vw;
+    overflow: hidden;
+    padding: 0.3rem;
+    width: 25vw;
+    height: 4vh;
+    margin: 0 2vw;
+    max-width: 350px;
+  }
+  
+  /* Empêche tout dépassement de l’écran */
+  .search-bar input {
+    border: none;
+    outline: none;
+    padding: 0.8vh 1vw;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+  }
+  
+  /* Bouton de recherche */
+  .search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5vh 1vw;
+  }
+  
+  /* Section du bouton de droite */
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1vw;
+  }
+  
+  /* Bouton Connexion */
+  .login-button,
+  .profile-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 999px; /* effet arrondi total */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .login-button:hover,
+.profile-button:hover {
+  background-color: #222;
+  transform: scale(1.05);
+}
+  
+  /* Masquer la barre de recherche et le bouton sur les pages Login et Register */
+  .auth-navbar .navbar-center,
+  .auth-navbar .navbar-right {
+    display: none;
+  }
+  
+  /* Centrer le logo sur Login et Register */
+  .auth-navbar {
+    justify-content: center;
+  }
+  
+  .auth-navbar .center-logo {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .auth-navbar .logo-text,
+  .auth-navbar .logo-img {
+    margin: 0;
+  }
+  
+  /* RESPONSIVE - Ajustement pour Tablette et Mobile */
+  @media (max-width: 768px) {
+    .logo-text {
+      display: none;
+    }
+  
+    .logo-img {
+      display: block;
+    }
+  }
+  
+
+  /* Dropdown menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #f3f3f3;
+}

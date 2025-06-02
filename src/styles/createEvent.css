@@ -1,0 +1,121 @@
+.create-event-container {
+  padding: 10vh 5vw 5vh;
+  box-sizing: border-box;
+}
+
+.create-event-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3vh;
+}
+
+.event-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5vw;
+  justify-content: center;
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 280px;
+  flex: 1;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.time-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.map-container {
+  height: 250px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.create-btn {
+  background-color: #d5651b;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.create-btn:hover {
+  background-color: #b84f10;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.free-toggle {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background-color: transparent;
+  border: 1px solid #d5651b;
+  color: #d5651b;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.free-toggle.active {
+  background-color: #d5651b;
+  color: white;
+}
+
+input[type="file"] {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #333;
+}
+
+input[type="file"]::file-selector-button {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #d5651b;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 1rem;
+  transition: background 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #b04e15;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
