@@ -4,6 +4,8 @@ export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
+  const [shouldRedirectLogout, setShouldRedirectLogout] = useState(false); // 👈 nouvel état
+
 
   // 🔁 Vérifie et charge le user au démarrage
   useEffect(() => {
@@ -62,6 +64,7 @@ export function AuthProvider({ children }) {
   const logout = () => {
     localStorage.removeItem("token");
     setUser(null);
+    setShouldRedirectLogout(true); // 👈 active la redirection
     console.log("👋 Déconnecté");
   };
 

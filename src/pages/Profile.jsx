@@ -8,7 +8,6 @@ function Profile() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
     password: "",
     confirmPassword: "",
   });
@@ -50,7 +49,6 @@ function Profile() {
           {[
             { label: "Nom", name: "name" },
             { label: "Mail", name: "email", type: "email" },
-            { label: "Numéro de téléphone", name: "phone" },
             { label: "Mot de passe", name: "password", type: "password" },
             { label: "Confirmer le mot de passe", name: "confirmPassword", type: "password" },
           ].map((field) => (

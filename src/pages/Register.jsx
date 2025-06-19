@@ -39,7 +39,7 @@ function Register() {
       }
 
       localStorage.setItem("token", data.token);
-      navigate("/profile"); // rediriger après succès
+      navigate("/login", { state: { fromRegister: true } });
     } catch (err) {
       console.error(err);
       setError("Erreur réseau.");

@@ -40,7 +40,7 @@ function CreateEvent() {
     if (!address || address.length < 3) return;
     try {
       const response = await fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}&limit=1`,
+        `http://localhost:5000/api/geocode?address=${encodeURIComponent(address)}`,
         {
           headers: {
             Accept: "application/json",

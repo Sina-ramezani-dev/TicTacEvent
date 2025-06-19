@@ -10,10 +10,9 @@ function verifyToken(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
+    req.user = decoded; // contient userId + role
     next();
   } catch (err) {
-    console.error("JWT invalide :", err);
     res.status(403).json({ error: "Token invalide" });
   }
 }

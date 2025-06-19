@@ -3,8 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/navbar.css";
 import logoMobile from "../assets/logo-mobile.png";
-import { useAuth } from "../context/AuthContext";
-
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -17,7 +15,7 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -41,6 +39,7 @@ function Navbar() {
               <button type="submit">🔍</button>
             </form>
           </div>
+
           <div className="navbar-right">
             {user ? (
               <div className="dropdown">
@@ -57,6 +56,12 @@ function Navbar() {
                     <Link to="/reservations" onClick={() => setMenuOpen(false)}>Mes réservations</Link>
                     <Link to="/favorites" onClick={() => setMenuOpen(false)}>Favoris</Link>
                     <Link to="/events" onClick={() => setMenuOpen(false)}>Liste des évènements</Link>
+
+                    {/* ✅ Affichage conditionnel du bouton admin */}
+                    {user.role === "admin" && (
+                      <Link to="/admin" onClick={() => setMenuOpen(false)}>Espace Admin</Link>
+                    )}
+
                     <button onClick={handleLogout}>Déconnexion</button>
                   </div>
                 )}
@@ -72,3 +77,4 @@ function Navbar() {
 }
 
 export default Navbar;
+  
