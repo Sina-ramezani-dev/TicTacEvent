@@ -1,33 +1,39 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Register from '../pages/Register';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from '../contexts/AuthContext';
 
 describe('Register Page', () => {
   const mockRegister = vi.fn();
 
-  beforeEach(() => {
+  const renderWithContext = () => {
     render(
       <AuthContext.Provider value={{ register: mockRegister }}>
-        <BrowserRouter>
-          <Register />
-        </BrowserRouter>
+        <Register />
       </AuthContext.Provider>
     );
-  });
+  };
 
   it('affiche le titre inscription', () => {
+    renderWithContext();
     expect(screen.getByText(/Inscription/i)).toBeInTheDocument();
   });
 
   it('remplit le formulaire et envoie', () => {
-  fireEvent.change(screen.getByPlaceholderText(/Nom/i), { target: { value: 'TestUser' } });
-  fireEvent.change(screen.getByPlaceholderText(/Mail/i), { target: { value: 'test@gmail.com' } });
-  fireEvent.change(screen.getByPlaceholderText(/Mot de passe/i), { target: { value: 'test1234' } });
+    renderWithContext();
 
-  fireEvent.click(screen.getByRole('button', { name: /Créer un compte/i }));
-  expect(mockRegister).toHaveBeenCalled();
-});
+    fireEvent.change(screen.getByPlaceholderText(/Nom/i), {
+      target: { value: 'TestUser' }
+    });
+    fireEvent.change(screen.getByPlaceholderText(/Mail/i), {
+      target: { value: 'test@example.com' }
+    });
+    fireEvent.change(screen.getByPlaceholderText(/Mot de passe/i), {
+      target: { value: 'password123' }
+    });
 
+    fireEvent.click(screen.getByRole('button', { name: /Créer un compte/i }));
+
+    expect(mockRegister).toHaveBeenCalled();
+  });
 });
