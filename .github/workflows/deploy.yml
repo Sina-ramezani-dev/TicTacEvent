@@ -1,0 +1,49 @@
+name: CI - Test et Build
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: pass
+          POSTGRES_DB: dbname
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Installer les dépendances du frontend
+        run: npm install
+
+      - name: Lancer les tests frontend
+        run: npm run test
+
+      - name: Installer les dépendances du backend
+        run: |
+          cd backend
+          npm install
+
+      - name: Lancer les tests backend
+        run: |
+          cd backend
+          npm run test
