@@ -22,11 +22,12 @@ describe('Register Page', () => {
   });
 
   it('remplit le formulaire et envoie', () => {
-    fireEvent.change(screen.getByPlaceholderText(/Nom/i), { target: { value: 'TestUser' } });
-    fireEvent.change(screen.getByPlaceholderText(/Mail/i), { target: { value: 'test@gmail.com' } });
-    fireEvent.change(screen.getByPlaceholderText(/Mot de passe/i), { target: { value: 'test1234' } });
+  fireEvent.change(screen.getByPlaceholderText(/Nom/i), { target: { value: 'TestUser' } });
+  fireEvent.change(screen.getByPlaceholderText(/Mail/i), { target: { value: 'test@gmail.com' } });
+  fireEvent.change(screen.getByPlaceholderText(/Mot de passe/i), { target: { value: 'test1234' } });
 
-    fireEvent.click(screen.getByRole('button', { name: /S'inscrire/i }));
-    expect(mockRegister).toHaveBeenCalled();
-  });
+  fireEvent.click(screen.getByRole('button', { name: /Créer un compte/i }));
+  expect(mockRegister).toHaveBeenCalled();
+});
+
 });
