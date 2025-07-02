@@ -47,3 +47,9 @@ jobs:
         run: |
           cd backend
           npm run test
+      
+      - name: Installer les dépendances du backend
+        run: |
+          cd backend
+          npm install
+          npm install cloudinary
